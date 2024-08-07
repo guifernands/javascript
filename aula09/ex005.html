@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: purple;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p class="pp2">Aprendendo a usar as <strong name="str">DOM</strong> em JS</p>
+    <div id="div">Clica em mim</div>
+
+    <script>
+        p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'skyblue'
+        window.document.write('Primeiro parágrafo: ' + p1.innerText)
+
+        s = document.getElementsByName('str')[0]
+        s.style.color = 'white'
+        s.style.background = 'black'
+
+        p2 = document.getElementsByClassName('pp2')[0]
+        p2.style.color = 'lime'
+        document.write('<br>O segundo parágrafo: '+ p2.innerText)
+        
+
+        d = document.querySelector('div#div')
+        d.style.color = 'darkred'
+    </script>
+</body>
+</html>
