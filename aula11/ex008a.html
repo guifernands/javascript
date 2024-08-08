@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países</title>
+    <style>
+        * {
+            margin: 10px;
+        }
+        body {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+
+            height: 97vh;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual sua Nacionalidade</h1>
+
+    <p>Qual seu país de origem?</p>
+
+    <input type="text" id="txt" placeholder="Digite seu país">
+
+    <input type="button" id="verificar" value="Verificar">
+
+    <div id="res"></div>
+
+    <script>
+        verificar = document.getElementById('verificar')
+        verificar.addEventListener('click', verifica)
+        
+        function verifica(){
+
+            nacionalidade = document.getElementById('txt')
+            nacionalidade = String(nacionalidade.value)
+
+            if (nacionalidade != 'Brasil'){
+                res = document.getElementById('res')
+                res.innerHTML = 'Estrangeiro(a)'
+            } else {
+                res.innerHTML = 'Brasileiro(a)'
+            }
+        }
+    </script>
+
+</body>
+</html>
