@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background-color: salmon;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="area">
+        clica ai
+    </div>
+
+    <script>
+        d = document.getElementById('area')
+        d.addEventListener('click', clicar)
+        d.addEventListener('mouseenter', entrar)
+        d.addEventListener('mouseout', sair)
+
+        function clicar() {
+            d.style.background = 'green'
+            d.innerText = 'clicou'
+        }
+
+        function entrar() {
+            d.innerText = 'entrou'
+        }
+
+        function sair() {
+            d.innerText = 'saiu'
+            d.style.background = 'salmon'
+        }
+    </script>
+</body>
+</html>
