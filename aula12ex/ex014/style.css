@@ -1,0 +1,35 @@
+* {
+    padding: 0px;
+    margin: 10px;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    height: 94vh;
+    background-color: royalblue;
+    color: white;
+    font-style: italic;
+    text-shadow: 1px 1px 5px black;
+    font-family: Verdana, Tahoma, sans-serif, Courier, monospace;
+}
+
+section {
+    height: 45vh;
+    width: 40vw;
+    background-color: white;
+    color: black;
+    text-shadow: none;
+    border-radius: 30px;
+    box-shadow: 1px 2px 8px black;
+    text-align: center;
+}
+
+section > div > img#imagem {
+    height: 35vh;
+    width: 30vw;
+    border-radius: 30px;
+}
