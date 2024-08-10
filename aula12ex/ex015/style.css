@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 7px;
+    font-style: italic;
+    text-shadow: 1px 1px 5px black;
+    font-family: Verdana, Tahoma, sans-serif, Courier, monospace;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    height: 94vh;
+    background-color: royalblue;
+}
+
+header > h1 {
+    color: white;
+}
+
+section {
+    height: 45vh;
+    width: 50vw;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 1px 2px 8px black;
+}
+
+section > div > p {
+    text-shadow: none;
+}
+
+section > div > p > label {
+    text-shadow: none;
+    margin: 0px;
+}
+
+footer {
+    color: white;
+}
