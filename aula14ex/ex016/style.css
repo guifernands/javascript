@@ -25,3 +25,17 @@ section {
     border-radius: 30px;
     box-shadow: 1px 2px 8px black;
 }
+
+section * {
+    text-shadow: none;
+    color: black;
+    text-align: center;
+}
+
+section > div > input {
+    width: 50px;
+}
+
+section > div#resultado {
+    max-width: 400px;
+}
