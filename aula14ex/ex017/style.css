@@ -18,9 +18,20 @@ body {
 }
 
 section {
-    height: 45vh;
-    width: 40vw;
+    height: auto;
+    width: auto;
+    padding: 15px;
     background-color: white;
     border-radius: 30px;
     box-shadow: 1px 2px 8px black;
+}
+
+section * {
+    text-shadow: none;
+    color: black;
+    text-align: center;
+}
+
+#n {
+    width: 40px;
 }
