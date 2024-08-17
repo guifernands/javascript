@@ -1,0 +1,37 @@
+* {
+    padding: 0px;
+    margin: 10px;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    height: 94vh;
+    background-color: royalblue;
+    color: white;
+    font-style: italic;
+    text-shadow: 1px 1px 5px black;
+    font-family: Verdana, Tahoma, sans-serif, Courier, monospace;
+}
+
+section {
+    height: auto;
+    width: auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 1px 2px 8px black;
+}
+
+section * {
+    color: black;
+    text-shadow: none;
+}
+
+select {
+    width: 100px;
+    height: 75px;
+}
