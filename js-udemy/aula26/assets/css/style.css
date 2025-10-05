@@ -27,6 +27,22 @@ body {
     border-radius: 5px;
 }
 
+.tabelas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tabela1, .tabela2, ul {padding: 0;} li{
+    list-style: none;
+    margin: 0;
+}
+
+#resultado {
+    text-decoration: underline;
+    text-decoration-color: green;
+}
+
 form input, form, label, form button {
     display: block;
     width: 100;
@@ -52,6 +68,7 @@ form button {
     height: 50px;
     cursor: pointer;
     margin-top: 30px;
+    width: 100%;
 }
 
 form button:hover {

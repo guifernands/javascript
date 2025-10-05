@@ -52,6 +52,7 @@ form button {
     height: 50px;
     cursor: pointer;
     margin-top: 30px;
+    width: 100%;
 }
 
 form button:hover {

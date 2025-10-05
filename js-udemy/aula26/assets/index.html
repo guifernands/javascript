@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío aula 44</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <section class="container">
+
+        <h1>Tabela IMC</h1>
+        <section class="tabelas">
+            <div class="tabela1">
+                <h3>IMC</h3>
+                <ul>
+                    <li>Menos do que 18,5</li>
+                    <li>Entre 18,5 e 24,9</li>
+                    <li>Entre 25 e 29,9</li>
+                    <li>Entre 30 e 34,9</li>
+                    <li>Entre 35 e 39,9</li>
+                    <li>Mais do que 40</li>
+                </ul>
+            </div>
+            <div class="tabela2">
+                 <h3>Resultado</h3>
+                <ul>
+                    <li>Abaixo do peso</li>
+                    <li>Peso normal</li>
+                    <li>Sobrepeso</li>
+                    <li>Obesidade grau 1</li>
+                    <li>Obesidade grau 2</li>
+                    <li>Obesidade grau 3</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <form action="" id="form-imc">
+                <label for="peso">Peso(kg):</label>
+                <input type="number" id="peso">
+
+                <label for="altura">Altura(m):</label>
+                <input type="number" id="altura">
+
+                <button type="submit" onclick="calcula(event)">Enviar</button>
+            </form>
+            <p id="resultado"></p>
+        </section>
+
+    </section>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
