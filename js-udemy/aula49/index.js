@@ -23,7 +23,7 @@ const funcaoArrow = () => {
 }
 funcaoArrow();
 
-// dentro de um objeto
+// function dentro de um objeto
 const obj = {
     falar: function() {
         console.log('estou falando...(de dreto do objeto)')
