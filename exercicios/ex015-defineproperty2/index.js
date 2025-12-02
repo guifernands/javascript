@@ -11,4 +11,4 @@ Object.defineProperty(system, 'masterKey', {
 });
 
 const password = system.masterKey;
-console.log(`The password is: ${password}`)
+console.log(`The password is: ${password}`);
