@@ -1,6 +1,6 @@
 function cpfCalc() {
     const cpf = '705.484.450-52';
-    const cpfClean = cpf.replace(/\D+/g);
+    const cpfClean = cpf.replace(/\D+/g, '');
     let calculated = [];
     let calculated2 = [];
     let total1 = 0;
