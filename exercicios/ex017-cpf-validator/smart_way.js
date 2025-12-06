@@ -19,9 +19,15 @@ CpfValidator.prototype.validator = function() {
 
 CpfValidator.prototype.digitCreator = function(parcialCpf) {
     const cpfArray = Array.from(parcialCpf);
-    
-    const regressive = cpfArray.length;
-    console.log(regressive);
+    let regressive = cpfArray.length + 1;
+    let total = cpfArray.reduce((ac, val) => {
+        console.log(regressive, val, regressive * val);
+        ac += (regressive * Number(val));
+        regressive--;
+        return ac;
+    }, 0);
+
+    const digit = 11 - (total % 11);
 };
 
 const cpf = new CpfValidator('705.484.450-52');
