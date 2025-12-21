@@ -1,50 +1,30 @@
-// Superclass
-function Conta(agencia, conta, saldo) {
-    this.agencia = agencia;
-    this.conta = conta;
-    this.saldo = saldo;
+// Mixing
+const falar = {
+    falar() {
+        console.log(`${this.nome} está falando.`)
+    },
 }
-
-Conta.prototype.sacar = function(valor) {
-    if(this.saldo < valor) {
-        console.log(`Saldo insuficiente: ${this.saldo}`)
-        return;
+const comer = {
+    comer() {
+        console.log(`${this.nome} está comendo.`)
+    },
+}
+const beber = {
+    beber() {
+        console.log(`${this.nome} está bebendo.`)
     }
-
-    this.saldo -= valor;
-    this.verSaldo();
-};
-
-Conta.prototype.depositar = function(valor) {
-    this.saldo += valor;
-    this.verSaldo();
-};
-
-Conta.prototype.verSaldo = function() {
-    console.log(
-        `Ag/c: ${this.agencia}/${this.conta} \nSaldo: R$${this.saldo.toFixed(2)}`
-    );
-};
-
-// Conta Corrente
-function CC(agencia, conta, saldo, limite) {
-    Conta.call(this, agencia, conta, saldo);
-    this.limite = limite;
 }
 
-function CP(agencia, conta, saldo, limite) {
-    Conta.call(this, agencia, conta, saldo);
-    this.limite = limite;
+const pessoaPrototype = { ...falar, ...comer, ...beber };
+
+function criaPessoa(nome, sobrenome) {
+    return Object.create(pessoaPrototype, {
+        nome: { value: nome },
+        sobrenome: { value: sobrenome }
+    });
 }
-CC.prototype = Object.create(Conta.prototype);
-CC.prototype.constructor = CC;
 
-CC.prototype.sacar = function(valor) {
-    if((this.saldo + this.limite) < valor) {
-        console.log(`Saldo insuficiente: ${this.saldo}`)
-        return;
-    }
-
-    this.saldo -= valor;
-    this.verSaldo();
-};
+const p1 = criaPessoa('Luiz', 'Otávio');
+const p2 = criaPessoa('Guilherme', 'Fernandes');
+console.log(p1.comer());
+console.log(p2.falar());
