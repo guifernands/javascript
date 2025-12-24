@@ -32,12 +32,42 @@ class ValidaCadastro {
             if(info.valor === '') return console.log('Todos campos devem estar preenchidos.');
 
             // sem espaços
-            if(info.valor.includes(' ')) return console.log('Espaços não são permitidos.');
+            if(info.valor.includes(' ')) return console.log('Espaços não são permitidos nos campos.');
 
-            validaNome(info);
+            if(info.input.classList.contains('nome')) {
+                this.validaNome(info);
+            }
+            if(info.input.classList.contains('sobrenome')) {
+                this.validaSobrenome(info);
+            }
+            if(info.input.classList.contains('')) {
+                
+            }
+            if(info.input.classList.contains('')) {
+                
+            }
+            if(info.input.classList.contains('')) {
+                
+            }
+            if(info.input.classList.contains('')) {
+                
+            }
         }
     }
+
     validaNome(info) {
-        if(/\d/.test(info.valor)) return console.log('Digite apenas letras.');
+        if(/\d/.test(info.valor)) return console.log('Nome: Digite apenas letras.');
+        
+        if(info.valor.length < 3) return console.log('Nome: Minímo de 3 caracteres.')
+        
+        console.log(`${info.valor} é um nome válido.`);
+    }
+
+    validaSobrenome(info) {
+        if(/\d/.test(info.valor)) return console.log('Sobrenome: Digite apenas letras.');
+        
+        if(info.valor.length < 3) return console.log('Sobrenome: Minímo de 3 caracteres.')
+        
+        console.log(`${info.valor} é um sobrenome válido.`);
     }
 }  
