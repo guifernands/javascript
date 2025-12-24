@@ -45,7 +45,7 @@ class ValidaCadastro {
                 this.validaCPF(info);
             }
             if(info.input.classList.contains('usuario')) {
-                
+                this.validaUsuario(info);
             }
             if(info.input.classList.contains('senha1')) {
                 
@@ -74,6 +74,15 @@ class ValidaCadastro {
 
     validaCPF(info) {
         if(info.valor.length !== 11) return console.log('CPF: O CPF deve conter 11 caracteres.');
+
         console.log(`${info.valor} é um CPF válido.`);
+    }
+
+    validaUsuario(info) {
+        if(info.valor.length < 3 || info.valor.length > 12) return console.log('Usuario: O usuário deve conter entre 3 e 12 caracteres.');
+
+        // FAZER VALIDAÇÃO DE APENAS LETRAS E/OU NÚMEROS
+
+        console.log(`${info.valor} é um usuário válido.`);
     }
 }  
