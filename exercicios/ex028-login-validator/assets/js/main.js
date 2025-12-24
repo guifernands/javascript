@@ -34,22 +34,23 @@ class ValidaCadastro {
             // sem espaços
             if(info.valor.includes(' ')) return console.log('Espaços não são permitidos nos campos.');
 
+            // ativa o valida de acordo com a classe 
             if(info.input.classList.contains('nome')) {
                 this.validaNome(info);
             }
             if(info.input.classList.contains('sobrenome')) {
                 this.validaSobrenome(info);
             }
-            if(info.input.classList.contains('')) {
+            if(info.input.classList.contains('cpf')) {
+                this.validaCPF(info);
+            }
+            if(info.input.classList.contains('usuario')) {
                 
             }
-            if(info.input.classList.contains('')) {
+            if(info.input.classList.contains('senha1')) {
                 
             }
-            if(info.input.classList.contains('')) {
-                
-            }
-            if(info.input.classList.contains('')) {
+            if(info.input.classList.contains('senha2')) {
                 
             }
         }
@@ -58,7 +59,7 @@ class ValidaCadastro {
     validaNome(info) {
         if(/\d/.test(info.valor)) return console.log('Nome: Digite apenas letras.');
         
-        if(info.valor.length < 3) return console.log('Nome: Minímo de 3 caracteres.')
+        if(info.valor.length < 3) return console.log('Nome: Minímo de 3 caracteres.');
         
         console.log(`${info.valor} é um nome válido.`);
     }
@@ -66,8 +67,13 @@ class ValidaCadastro {
     validaSobrenome(info) {
         if(/\d/.test(info.valor)) return console.log('Sobrenome: Digite apenas letras.');
         
-        if(info.valor.length < 3) return console.log('Sobrenome: Minímo de 3 caracteres.')
+        if(info.valor.length < 3) return console.log('Sobrenome: Minímo de 3 caracteres.');
         
         console.log(`${info.valor} é um sobrenome válido.`);
+    }
+
+    validaCPF(info) {
+        if(info.valor.length !== 11) return console.log('CPF: O CPF deve conter 11 caracteres.');
+        console.log(`${info.valor} é um CPF válido.`);
     }
 }  
