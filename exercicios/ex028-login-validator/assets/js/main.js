@@ -61,7 +61,7 @@ class ValidaCadastro {
         
         if(info.valor.length < 3) return console.log('Nome: Minímo de 3 caracteres.');
         
-        console.log(`${info.valor} é um nome válido.`);
+        console.log(`Nome: ${info.valor} é um nome válido.`);
     }
 
     validaSobrenome(info) {
@@ -69,20 +69,28 @@ class ValidaCadastro {
         
         if(info.valor.length < 3) return console.log('Sobrenome: Minímo de 3 caracteres.');
         
-        console.log(`${info.valor} é um sobrenome válido.`);
+        console.log(`Sobrenome: ${info.valor} é um sobrenome válido.`);
     }
 
     validaCPF(info) {
         if(info.valor.length !== 11) return console.log('CPF: O CPF deve conter 11 caracteres.');
 
-        console.log(`${info.valor} é um CPF válido.`);
+        console.log(`CPF: ${info.valor} é um CPF válido.`);
     }
 
     validaUsuario(info) {
         if(info.valor.length < 3 || info.valor.length > 12) return console.log('Usuario: O usuário deve conter entre 3 e 12 caracteres.');
 
-        // FAZER VALIDAÇÃO DE APENAS LETRAS E/OU NÚMEROS
+        if(/[^a-zA-Z0-9]/.test(info.valor)) return console.log('Usuario: Use apenas letras e números.');
 
-        console.log(`${info.valor} é um usuário válido.`);
+        console.log(`Usuario: ${info.valor} é um usuário válido.`);
+    }
+
+    validaSenha1(info) {
+        
+    }
+
+    validaSenha2(info) {
+        
     }
 }  
