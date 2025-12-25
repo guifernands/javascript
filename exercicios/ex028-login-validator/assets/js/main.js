@@ -25,6 +25,7 @@ enviar.addEventListener('click', function(e) {
 // classe onde vai validar campo por campo
 class ValidaCadastro {  
     constructor(informacoes) {
+        this.informacoes = informacoes;
         // Valida os Campos primeiro
         // passa por todos itens do array informacoes
         for(const info of informacoes) {
@@ -47,11 +48,8 @@ class ValidaCadastro {
             if(info.input.classList.contains('usuario')) {
                 this.validaUsuario(info);
             }
-            if(info.input.classList.contains('senha1')) {
-                
-            }
-            if(info.input.classList.contains('senha2')) {
-                
+            if(info.input.classList.contains('senha1', 'senha2')) {
+                this.validaSenha(info);
             }
         }
     }
@@ -86,11 +84,20 @@ class ValidaCadastro {
         console.log(`Usuario: ${info.valor} é um usuário válido.`);
     }
 
-    validaSenha1(info) {
+    validaSenha(info) {
+        if(info.input.classList.contains('senha1')) {
+            if(info.valor.length < 6 || info.valor.length > 12) return console.log('Senha 1: A senha precisa ter entre 6 e 12 caracteres.');
+
+            const senha1 = info.valor;
+            console.log(`Senha 1: Senha válida.`);
+        }
+
+
         
+
+        
+
     }
 
-    validaSenha2(info) {
-        
-    }
+    
 }  
