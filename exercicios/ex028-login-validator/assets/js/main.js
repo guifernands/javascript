@@ -99,6 +99,4 @@ class ValidaCadastro {
             console.log('Senha: As senhas são iguais e válidas.');
         }
     }
-
-    
 }  
