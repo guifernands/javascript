@@ -26,6 +26,7 @@ enviar.addEventListener('click', function(e) {
 class ValidaCadastro {  
     constructor(informacoes) {
         this.informacoes = informacoes;
+        console.clear()
         // Valida os Campos primeiro
         // passa por todos itens do array informacoes
         for(const info of informacoes) {
@@ -48,7 +49,7 @@ class ValidaCadastro {
             if(info.input.classList.contains('usuario')) {
                 this.validaUsuario(info);
             }
-            if(info.input.classList.contains('senha1', 'senha2')) {
+            if(info.input.classList.contains('senha1') | info.input.classList.contains('senha2')) {
                 this.validaSenha(info);
             }
         }
@@ -85,18 +86,18 @@ class ValidaCadastro {
     }
 
     validaSenha(info) {
-        if(info.input.classList.contains('senha1')) {
-            if(info.valor.length < 6 || info.valor.length > 12) return console.log('Senha 1: A senha precisa ter entre 6 e 12 caracteres.');
-
-            const senha1 = info.valor;
-            console.log(`Senha 1: Senha válida.`);
+        // validação de tamanho
+        if(info.valor.length < 6 || info.valor.length > 12) {
+            return console.log('As senhas devem ter entre 6 e 12 caracteres.');
         }
 
+        if(info.input.classList.contains('senha2')) {
+            const campoSenha1 = this.informacoes.find(item => item.input.classList.contains('senha1'));
 
-        
-
-        
-
+            if (info.valor !== campoSenha1.valor) return console.log('Senha: As senhas não conferem!');
+            
+            console.log('Senha: As senhas são iguais e válidas.');
+        }
     }
 
     
