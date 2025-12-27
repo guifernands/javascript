@@ -37,6 +37,20 @@ class Usuario {
     }    
 }
 
+class Jogador extends Usuario {
+    #pontuacao;
+    #nivel;
+    #nick;
+
+    constructor(nome, email, nick) {
+        super(nome, email); // pega o nome e o email da classe pai
+
+        this.#nick = nick;
+        this.#pontuacao = 0;
+        this.#nivel = 1;
+    }
+}
+
 const user1 = new Usuario('Guile', 'guifernandes@gmail.com');
 const user2 = new Usuario('Askelad', 'askelad321@hotmail.com');
 const user3 = new Usuario('Knight', 'knight000@outlook.com');
