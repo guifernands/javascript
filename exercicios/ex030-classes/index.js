@@ -49,6 +49,21 @@ class Jogador extends Usuario {
         this.#pontuacao = 0;
         this.#nivel = 1;
     }
+
+    ganharPontos(valor) {
+        this.#pontuacao += valor;
+        if(this.#pontuacao > 5000) return this.#nivel = 3; 
+        if(this.#pontuacao > 1000) return this.#nivel = 2;
+    }
+
+    resetar() {
+        this.#pontuacao = 0;
+        this.#nivel = 1;
+    }
+
+    exibirInfo() {
+        return `Jogador ${this.#nick} (Nível ${this.#nivel} - Pontos: ${this.#pontuacao})`;
+    }
 }
 
 const user1 = new Usuario('Guile', 'guifernandes@gmail.com');
