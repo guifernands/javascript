@@ -5,7 +5,6 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-
 function esperaAi(msg, tempo) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
