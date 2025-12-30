@@ -1,0 +1,21 @@
+{
+  "name": "aula93",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gera": "webpack -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "core-js": "^2.6.12",
+    "regenerator-runtime": "^0.14.1",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
