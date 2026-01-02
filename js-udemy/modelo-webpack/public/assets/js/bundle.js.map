@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":"AAGAA,QAAQC,IAAI","sources":["webpack://aula93/./src/index.js"],"sourcesContent":["// 1\r\n// 2\r\n// 3\r\nconsole.log('shrek ta vindo atras de mi')"],"names":["console","log"],"ignoreList":[],"sourceRoot":""}
