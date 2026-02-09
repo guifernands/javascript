@@ -1,0 +1,1 @@
+export const versao = "v2.0-beta";
