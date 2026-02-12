@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true }) );
+
 app.get('/', (req, res) => {
     res.send(`
         <form action="/" method="POST">
@@ -10,8 +12,16 @@ app.get('/', (req, res) => {
     `);
 });
 
+app.get('/profiles/:idUsuarios', (req, res) => {
+    // /profiles/3
+    // /profiles/?chave1=valor1&chave2=valor2%vhave3=valor3
+    
+    console.log(req.params);
+    res.send(req.params.idUsuarios);
+});
+
 app.post('/', (req, res) => {
-    res.send('Recebi o fomulário')
+    res.send(`Você enviou: ${req.body.nome}`);
 });
 
 app.listen(3000, () => {
