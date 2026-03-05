@@ -15,5 +15,9 @@ let jogos = [
 
 // iniciando o servidor / "fica ouvindo" requisições na porta 3000 do computador
 app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000!");
+    console.log("Servidor rodando!");
+    console.log("Acessar http://localhost:3000")
 });
+
+// usar esse código no terminal para atualizar toda vez que o código muda!
+// node --watch index.js
