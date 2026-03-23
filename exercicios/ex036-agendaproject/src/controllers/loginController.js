@@ -4,8 +4,30 @@ exports.index = (req, res) => {
     res.render('login');
 };
 
-exports.register = function(req, res) {
-    const login = new Login(req.body);
-    login.registraUsuario();
-    res.send(login.errors);
+exports.register = async function(req, res) {
+    try {
+        const login = new Login(req.body);
+        await login.registraUsuario();
+
+        if(login.errors.length > 0) {
+            req.flash('errors', login.errors);
+            req.session.save(function() {
+                return res.redirect('/login/index');
+            });
+            return;
+        }
+
+        req.flash('success', 'Seu usuário foi criado com sucesso!');
+            req.session.save(function() {
+                return res.redirect('/login/index');
+            });
+            return;
+
+        return res.send(login.errors);
+    }
+    catch(e) {
+        console.log(e);
+        return res.render('404');
+    }
+
 };

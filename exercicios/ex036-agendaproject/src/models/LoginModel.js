@@ -3,7 +3,7 @@ const validator = require('validator');
 
 const loginSchema = new mongoose.Schema({
     email: { type: String, required: true },
-    senha: { type: String, required: true }
+    password: { type: String, required: true }
 });
 
 const LoginModel = mongoose.model('Login', loginSchema);
@@ -15,9 +15,15 @@ class Login {
         this.user = null;
     }
 
-    registraUsuario() {
+    async registraUsuario() {
         this.validaUsuario();
         if(this.errors.length > 0) return;
+
+        try {
+            this.user = await LoginModel.create(this.body);
+        }   catch(e) {
+            console.log(e);
+        }
     }
 
     validaUsuario() {
