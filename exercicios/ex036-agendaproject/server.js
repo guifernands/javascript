@@ -20,7 +20,9 @@ const path = require('path');
 const csrf = require('csurf');
 const { meuMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware.js')
 
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false // Desativa temporariamente a política super restrita
+}));
 app.use(express.urlencoded({ extended: true }) );
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
