@@ -1,4 +1,3 @@
-/* Definição das cores (Modo Claro Aconchegante) */
 :root {
     --bg-color: #fdfaf7;
     --card-bg: #ffffff;
@@ -20,107 +19,100 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.3s ease;
+    font-family: 'Inter', -apple-system, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
 }
 
 .cartao-moderno {
     background-color: var(--card-bg);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 2.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--accent-color);
+}
+
+.table {
+    width: 100%;
+    background-color: transparent !important;
+    margin-top: 1rem;
+}
+
+.table td, .table th {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+    border-top: 1px solid var(--accent-color) !important;
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table thead th {
+    border-top: none !important;
+    border-bottom: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+/* HOVER QUE NÃO FICA BRANCO */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme='dark'] .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary {
     background-color: var(--primary-color) !important;
     border: none !important;
-    color: #fff !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 163, 115, 0.3);
 }
 
 .form-control {
     background-color: var(--input-bg);
     color: var(--text-color);
     border: 1px solid var(--accent-color);
+    border-radius: 10px;
 }
 
-/* Estilo do botão de switch no topo */
+.form-control:focus {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.1);
+}
+
 #theme-switch {
     cursor: pointer;
-    padding: 5px 15px;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 1px solid var(--primary-color);
-    background: transparent;
     color: var(--primary-color);
+    background: transparent;
+    padding: 5px 15px;
 }
 
 .error-text-animated {
     display: block;
     color: #dc3545;
-    font-size: 0.875em;
-    margin-top: 0.25rem;
-    animation: pulseError 0.5s ease-in-out; 
+    font-size: 0.85em;
+    margin-top: 5px;
+    animation: pulseError 0.5s ease-in-out;
 }
 
 @keyframes pulseError {
-    0% { opacity: 0.1; transform: translateX(-5px); }
-    50% { opacity: 1; transform: translateX(5px); color: #ff4444; }
-    100% { opacity: 1; transform: translateX(0); color: #dc3545; }
-}
-
-/* No seu style.css */
-
-.table {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden; /* Para as bordas arredondadas funcionarem na tabela */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border: none;
-}
-
-.table thead th {
-    background-color: #f1f5f9;
-    color: #475569;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    border-bottom: 2px solid #e2e8f0;
-    padding: 15px;
-}
-
-.table tbody td {
-    padding: 15px;
-    vertical-align: middle;
-    color: #334155;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.table tbody tr:hover {
-    background-color: #f8fafc; /* Efeito hover sutil */
-}
-
-/* Botões arredondados e com transição suave */
-.btn {
-    border-radius: 8px;
-    font-weight: 500;
-    padding: 0.6rem 1.2rem;
-    transition: all 0.2s;
-}
-
-.btn-primary {
-    background-color: #6366f1;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #4f46e5;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-}
-
-/* Inputs focados */
-.form-control:focus {
-    border-color: var(--primary-color);
-    outline: 2px solid var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    0% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
 }
