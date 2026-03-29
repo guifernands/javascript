@@ -1,0 +1,126 @@
+/* Definição das cores (Modo Claro Aconchegante) */
+:root {
+    --bg-color: #fdfaf7;
+    --card-bg: #ffffff;
+    --text-color: #4a3f35;
+    --primary-color: #d4a373;
+    --accent-color: #faedcd;
+    --input-bg: #f8f9fa;
+}
+
+[data-theme='dark'] {
+    --bg-color: #1a1c1e;
+    --card-bg: #232629;
+    --text-color: #e3e3e3;
+    --primary-color: #e9c46a;
+    --accent-color: #3e444a;
+    --input-bg: #2d3135;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.cartao-moderno {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+}
+
+/* Estilo do botão de switch no topo */
+#theme-switch {
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.error-text-animated {
+    display: block;
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    animation: pulseError 0.5s ease-in-out; 
+}
+
+@keyframes pulseError {
+    0% { opacity: 0.1; transform: translateX(-5px); }
+    50% { opacity: 1; transform: translateX(5px); color: #ff4444; }
+    100% { opacity: 1; transform: translateX(0); color: #dc3545; }
+}
+
+/* No seu style.css */
+
+.table {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden; /* Para as bordas arredondadas funcionarem na tabela */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.table thead th {
+    background-color: #f1f5f9;
+    color: #475569;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 15px;
+}
+
+.table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc; /* Efeito hover sutil */
+}
+
+/* Botões arredondados e com transição suave */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #6366f1;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Inputs focados */
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
