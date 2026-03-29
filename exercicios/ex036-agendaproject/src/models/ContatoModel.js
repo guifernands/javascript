@@ -3,6 +3,7 @@ const { async } = require('regenerator-runtime');
 const validator = require('validator');
 
 const ContatoSchema = new mongoose.Schema({
+    id_usuario: { type: String, required: true },
     nome: { type: String, required: true },
     sobrenome: { type: String, required: false, default: '' },
     email: { type: String, required: false, default: '' },
@@ -51,6 +52,7 @@ Contato.prototype.cleanUp = function() {
     }
     
     this.body = {
+        id_usuario: this.body.id_usuario,
         nome: this.body.nome,
         sobrenome: this.body.sobrenome,
         email: this.body.email,
@@ -72,8 +74,8 @@ Contato.buscaPorId = async function(id) {
     return contato;
 };
 
-Contato.buscaContatos = async function() {
-    const contatos = await ContatoModel.find()
+Contato.buscaContatos = async function(id_usuario) {
+    const contatos = await ContatoModel.find({ id_usuario: id_usuario })
         .sort({ criadoEm: -1 });
     return contatos;
 };

@@ -9,5 +9,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Agenda On-line</title>
+    <style>
+      .error-text-animated {
+          display: block;
+          color: #dc3545;
+          font-size: 0.875em;
+          margin-top: 0.25rem;
+          animation: pulseError 0.5s ease-in-out; 
+      }
+
+      @keyframes pulseError {
+          0% { opacity: 0.1; transform: translateX(-5px); }
+          50% { opacity: 1; transform: translateX(5px); color: #ff4444; }
+          100% { opacity: 1; transform: translateX(0); color: #dc3545; }
+      }
+    </style>
   </head>
   <body>
