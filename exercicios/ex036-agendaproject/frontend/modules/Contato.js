@@ -1,7 +1,5 @@
-import validator from 'validator';
-
-export default class Login {
-    constructor(formClass) {
+export default class Contato {
+    constructor(formClass){
         this.form = document.querySelector(formClass);
     }
 
@@ -19,19 +17,27 @@ export default class Login {
 
     validate(e) {
         const el = e.target;
+        const nomeInput = el.querySelector('input[name="nome"]');
         const emailInput = el.querySelector('input[name="email"]');
-        const passwordInput = el.querySelector('input[name="password"]');
+        const telefoneInput = el.querySelector('input[name="telefone"]');
         let error = false;
 
         this.limpaErros();
 
-        if(!validator.isEmail(emailInput.value)) {
-            this.criaErro(emailInput, 'E-mail inválido');
+        if(!nomeInput.value) {
+            this.criaErro(nomeInput, 'Nome é um campo obrigatório');
             error = true;
         }
 
-        if(passwordInput.value.length < 7 || passwordInput.value.length > 25) {
-            this.criaErro(passwordInput,'Senha precisa conter entre 7 e 25 caracteres');
+        if(!emailInput.value && !telefoneInput.value) {
+            if(!emailInput.value) {
+                this.criaErro(emailInput, 'Pelo menos um campo de contato deve ser preenchido');
+            }
+
+            if(!telefoneInput.value) {
+                this.criaErro(telefoneInput, 'Pelo menos um campo de contato deve ser preenchido');
+            }
+
             error = true;
         }
 
