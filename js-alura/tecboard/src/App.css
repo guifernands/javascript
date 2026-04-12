@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: #06151A;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+
+section {
+  background: linear-gradient(180deg, #17E4B9 0%, #091D24 100%);
+}
+
+section img {
+  max-width: 90%;
+}
