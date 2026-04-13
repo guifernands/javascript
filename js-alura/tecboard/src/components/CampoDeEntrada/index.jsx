@@ -1,8 +1,10 @@
+import './campo-de-entrada.css'
+
 // jeito inteligente
 export function CampoDeEntrada(props) {
 
   return (
-    <input { ...props }/>
+    <input { ...props } className='campo-entrada-form' />
   )
 }
 

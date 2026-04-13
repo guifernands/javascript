@@ -1,9 +1,11 @@
- // props é um OBJETO
+import './titulo-formulario.css'
+
+// props é um OBJETO
 // props.ALGUMACOISA
-export function TituloFormulario(props) {
+export function TituloFormulario({ children }) {
   return (
-      <h2>
-        { props.children }
+      <h2 className='titulo-form'>
+        { children }
       </h2>
   )
 }

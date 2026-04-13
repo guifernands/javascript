@@ -1,7 +1,8 @@
+import './campo-de-formulario.css'
 // { desestruturação } (melhor método)
 export function CampoDeFormulario({ children }) {
   return (
-    <fieldset>
+    <fieldset className='campo-form'>
       { children }
     </fieldset>
   )
